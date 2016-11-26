@@ -23,7 +23,6 @@ function deposit (naam, bedrag){
         console.log("geef een geldig nummer")
     }
 }
-//voorbeeld dat op toledo staat doet volgens mij niet wat het moet doen. deposit werkt en valideert
 
 //test deposit
 //deposit('Wibren',20);
@@ -59,6 +58,27 @@ withdraw('roro','m');
 withdraw('roro',5);
  */
 
+//************************************anonieme getBalance***************************************************
+//Add a function that returns a anonymous function that returns the balance from the given account
+function getBalance (){
+     
+     return function (naam){
+       for(i = 0; i<accounts.length; i++){
+        if(accounts[i].name === naam){
+            console.log("De balans van " + accounts[i].name +" = " + accounts[i].balance)
+            break;  }
+       }
+     }
+}
 
-console.log(accounts);
+//test anonieme functie
+
+var balance = getBalance();
+balance('Wibren');
+
+//********************************************************************************************
+
+
+
+//console.log(accounts);
 
